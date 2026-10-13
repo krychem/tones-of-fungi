@@ -8,7 +8,9 @@ signal = []
 for i in range(SAMPLE_RATE * DURATION):
     signal.append(random.gauss(0, 1))
 
-time = [i / SAMPLE_RATE for i in range(len(signal))]
+time = []
+for i in range(len(signal)):        # i = 0, 1, 2, ..., 999
+    time.append(i / SAMPLE_RATE)    # 1/ 100 
 
 plt.plot(time, signal)
 plt.xlabel("time [s]")
